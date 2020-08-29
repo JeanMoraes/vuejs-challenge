@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <p>Automatus Project</p>
     <Home />
   </div>
 </template>
@@ -17,12 +16,26 @@ export default {
 </script>
 
 <style>
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --primary-color: #660099
+}
+
+body{
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
