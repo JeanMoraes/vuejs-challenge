@@ -149,8 +149,7 @@ export default {
     display: flex;
 }
 
-#home .logo{
-    flex: 1;
+#home .logo svg{
     max-width: 250px;
 }
 
@@ -176,7 +175,7 @@ export default {
 }
 
 .box form input{
-    width: 350px;
+    max-width: 350px;
     height: 40px;
     background-color: transparent;
     border: 1px solid #FFF;
@@ -227,6 +226,41 @@ export default {
 .box select option{
     background-color: var(--primary-color);
     margin: 5px;
+}
+
+@media (max-width: 1024px){
+    #home{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #home .logo svg{
+        max-width: 200px;
+    }
+
+    #home .box{
+        width: 100%;
+        height: auto;
+        justify-content: center;
+    }
+
+    .box h1{
+        font-size: 25px;
+        margin-bottom: 10px;
+        width: auto;
+    }
+
+    .box h2{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .box .mensagem{
+        font-size: 22px;
+        max-width: 100%;
+    }
+
 }
 
 </style>
