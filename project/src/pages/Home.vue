@@ -37,12 +37,12 @@
 
             <section v-if="step === 2">
                 <div v-if="isMobile" class="mensagem">
-                    <h1>{{ nome }}, <br>ótima escolha!</h1>
+                    <h1>{{ nome.split(' ')[0] }}, <br>ótima escolha!</h1>
                     <p>O plano <strong>{{ this.planoAtual[0].nome }}</strong> no valor mensal de <strong>R${{ this.planoAtual[0].valor }}</strong> será ativado na sua linha {{ telefone }}.</p>
                 </div>
 
                 <div v-if="!isMobile" class="mensagem">
-                    <h1>{{ nome }}, <br>ótima escolha!</h1>
+                    <h1>{{ nome.split(' ')[0] }}, <br>ótima escolha!</h1>
                     <p>O plano <strong>{{ this.planoAtual[0].nome }}</strong> no valor mensal de <strong>R${{ this.planoAtual[0].valor }}</strong> será ativado será ativado em um novo chip.</p>
                 </div>
                 
@@ -83,12 +83,13 @@ export default {
             error: '',
             isMobile: null,
             listaPlanos: [],
-            planoAtual: []
+            planoAtual: [],
+            regexp: /([A-z])[ ]([A-z])/
         }
     },
     methods:{
         nextStep: function(){
-            if(this.nome === '' || this.cpf.length < 14 || this.telefone.length < 14)
+            if(!this.nome.match(this.regexp) || this.cpf.length < 14 || this.telefone.length < 14)
             {
                 this.error = 'Por favor, verifique os campos'
                 return
